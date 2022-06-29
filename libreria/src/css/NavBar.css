@@ -1,0 +1,23 @@
+
+.nav{
+    background-color: #795548;
+}
+
+.nav-link{
+    color: #BCAAA4 !important;
+}
+
+.btn{
+    background-color: #5D4037;
+    color: #BCAAA4 !important;
+    border: none;
+}
+
+.btn:hover{
+    background-color: #3E2723;
+    border: none;
+}
+
+.btn:active{
+    border: none;
+}
