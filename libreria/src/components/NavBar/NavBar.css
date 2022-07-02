@@ -1,6 +1,7 @@
 
 .nav{
     background-color: #795548;
+    width: 100%;
 }
 
 .nav-link{
@@ -21,3 +22,4 @@
 .btn:active{
     border: none;
 }
+
