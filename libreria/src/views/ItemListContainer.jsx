@@ -1,6 +1,6 @@
 const ItemListContainer = (props) => {
     return <>
-        <div class="alert alert-primary" role="alert">
+        <div className="alert alert-primary" role="alert">
             {props.saludo}
         </div>
     </>;

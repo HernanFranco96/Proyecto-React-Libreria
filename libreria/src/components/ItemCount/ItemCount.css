@@ -1,0 +1,39 @@
+
+.carta{
+    width: 300px;
+    font-size: 30px;
+    
+    display: flex;
+    align-items: center;
+}
+
+.carta .card-body{
+    width: 100%;
+}
+
+.carta .card-body ul{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: space-between;
+}
+
+.carta .card-body ul li{
+    list-style-type: none;
+}
+
+.carta .card-body ul li a{
+    text-decoration: none;
+    color: #000;
+}
+
+.carta .card-body #btn{
+    width: 100%;
+    background-color: rgb(153, 250, 216);
+    color: rgb(63, 123, 125) !important;
+}
+
+.carta .card-body #btn:hover{
+    background-color: rgb(67, 196, 151);
+}

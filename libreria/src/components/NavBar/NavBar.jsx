@@ -24,7 +24,7 @@ const NavBar = () => {
                 </div>
                 <div className="row row-cols-1">
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className='collapse navbar-collapse' id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
