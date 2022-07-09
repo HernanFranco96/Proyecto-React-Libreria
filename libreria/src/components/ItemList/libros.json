@@ -1,0 +1,92 @@
+[
+    {
+        "legajo": 1,
+        "titulo": "El Hobbit",
+        "autor": "J.R.R Tolkien",
+        "precio": 1200,
+        "url": "./src/assets/libros-portadas/Hobbit.jpg",
+        "stock": 27,
+        "repetidos": 0
+    },
+    {
+        "legajo": 2,
+        "titulo": "Harry Potter y la piedra filosofal",
+        "autor": "J.K Rowling",
+        "precio": 2200,
+        "url": "./src/assets/libros-portadas/Harry-Potter.jpg",
+        "stock": 38,
+        "repetidos": 0
+    },
+    {
+        "legajo": 3,
+        "titulo": "El Huracan Rojo",
+        "autor": "Alejandro Horowicz",
+        "precio": 4500,
+        "url": "./src/assets/libros-portadas/Huracan-Rojo.png",
+        "stock": 10,
+        "repetidos": 0
+    },
+    {
+        "legajo": 4,
+        "titulo": "La voz del gran jefe",
+        "autor": "Felipe Piña",
+        "precio": 3200,
+        "url": "./src/assets/libros-portadas/La-voz-del-gran-jefe.jpg",
+        "stock": 15,
+        "repetidos": 0
+    },
+    {
+        "legajo": 5,
+        "titulo": "Economia",
+        "autor": "David Ricardo",
+        "precio": 800,
+        "url": "./src/assets/libros-portadas/economia-ricardo.jpg",
+        "stock": 10,
+        "repetidos": 0
+    },
+    {
+        "legajo": 6,
+        "titulo": "El contrato social",
+        "autor": "Jean Jacques Rousseau",
+        "precio": 1000,
+        "url": "./src/assets/libros-portadas/contrato-social.jpg",
+        "stock": 5,
+        "repetidos": 0
+    },
+    {
+        "legajo": 7,
+        "titulo": "El Leviatan",
+        "autor": "Hobbes",
+        "precio": 650,
+        "url": "./src/assets/libros-portadas/leviatan.jpg",
+        "stock": 7,
+        "repetidos": 0
+    },
+    {
+        "legajo": 8,
+        "titulo": "El Principe",
+        "autor": "Maquiavelo",
+        "precio": 700,
+        "url": "./src/assets/libros-portadas/principe.jpg",
+        "stock": 17,
+        "repetidos": 0
+    },
+    {
+        "legajo": 9,
+        "titulo": "Las riquezas de las naciones",
+        "autor": "Adam Smith",
+        "precio": 1500,
+        "url": "./src/assets/libros-portadas/las-riquezas-naciones.jpg",
+        "stock": 11,
+        "repetidos": 0
+    },
+    {
+        "legajo": 10,
+        "titulo": "El manifiesto comunista",
+        "autor": "Karl Marx",
+        "precio": 1450,
+        "url": "./src/assets/libros-portadas/comunista.jpg",
+        "stock": 13,
+        "repetidos": 0
+    }
+]
