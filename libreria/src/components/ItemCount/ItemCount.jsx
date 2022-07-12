@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const ItemCount = (props) => {
 
-    const [count, updateCount] = useState(props.inicio);
+    const [count, updateCount] = useState(props.initial);
 
     const incrementar = () => {
         (count < props.stock) ? updateCount(count + 1) : alert('No puede adquirir mas productos.');
@@ -13,9 +13,9 @@ const ItemCount = (props) => {
         (count > 0) ? updateCount(count - 1) : alert('No hay stock');
     };
 
-    const onAdd = () => {
-        (count > 0 && count <= 5) ? alert('Usted selecciono un total de: ' + count) : null;
-    };
+    const agregarCarrito = () => {
+        props.onAdd(count);
+    }
 
     useEffect(() => {
         (count == 0) ? document.getElementById('btn').className = 'btn btn-outline-primary disabled' : document.getElementById('btn').className = 'btn btn-outline-primary';  
@@ -36,7 +36,7 @@ const ItemCount = (props) => {
                         <a href="#" onClick={incrementar}>+</a>
                     </li>
                 </ul>
-                <button type="button" className="btn btn-outline-primary" id='btn' onClick={onAdd}>Agregar al carrito</button>
+                <button type="button" className="btn btn-outline-primary" id='btn' onClick={agregarCarrito}>Agregar al carrito</button>
             </div>
         </div>
     </>;
