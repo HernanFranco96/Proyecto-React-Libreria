@@ -1,8 +1,12 @@
 import Item from '../Item/Item';
 
-const ItemList = ({libro}) => {
+const ItemList = ({libros}) => {
     return <>
-        <Item data={libro}/>
+        {libros.map((lib) => (
+            <div key={lib.legajo}>
+                <Item data={lib}/>
+            </div>
+        ))}
     </>;
 };
 

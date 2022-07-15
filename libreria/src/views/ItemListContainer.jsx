@@ -20,11 +20,7 @@ const ItemListContainer = (props) => {
             {props.saludo}
             <ItemCount stock={5} initial={1} onAdd={onAdd}/>
             <div className="container-fluid">
-                {libros.map((lib) => (
-                    <div key={lib.legajo}>
-                        <ItemList libro={lib}/>
-                    </div>
-                ))}
+                <ItemList libros={libros}/>
             </div>
         </div>
     </>;
