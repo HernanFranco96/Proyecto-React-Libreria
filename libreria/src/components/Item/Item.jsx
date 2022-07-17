@@ -7,7 +7,7 @@ const Item = ({data}) => {
             <div className="card-body">
                 <h2 className="card-title">{data.titulo}</h2>
                 <p className="card-text">{data.autor}</p>
-                <p className="card-text">{data.precio}</p>
+                <p className="card-text">${data.precio}</p>
                 <p className="card-text">Stock: {data.stock}</p>
                 <a href="#" className="btn btn-primary">Mas</a>
             </div>
