@@ -1,6 +1,7 @@
 import './ItemDetail.css'
 
 const ItemDetail = ({data}) => {
+    console.log(data);
     return <>
         <div className="card">
             <img src={data.url} className="card-img-top" alt="img"/>

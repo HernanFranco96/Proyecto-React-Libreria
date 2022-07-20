@@ -1,4 +1,5 @@
 import './item.css';
+import { Link } from 'react-router-dom';
 
 const Item = ({data}) => {
     return <>
@@ -9,7 +10,7 @@ const Item = ({data}) => {
                 <p className="card-text">{data.autor}</p>
                 <p className="card-text">${data.precio}</p>
                 <p className="card-text">Stock: {data.stock}</p>
-                <a href="#" className="btn btn-primary">Mas</a>
+                <Link className="btn btn-primary" to={`/item/${data.legajo}`}>Mas</Link>
             </div>
         </div>
     </>;
