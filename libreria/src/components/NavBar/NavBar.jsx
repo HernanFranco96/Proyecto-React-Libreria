@@ -1,8 +1,7 @@
 import CartWidget from '../CartWidget/CartWidget';
-import { Link, useParams } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavBar = () => {
-    const { id, categoryId } = useParams();
 
     return <>
         <nav className='nav navbar navbar-expand-lg bg-color'>
@@ -11,7 +10,7 @@ const NavBar = () => {
                     <div className="col">
                         <Link to={'/'}> 
                             <div className="navbar-brand">
-                                <img src="src/assets/logo/logo.png" className="w-50"/>
+                                <img src="./assets/logo/logo.png" className="w-50"/>
                             </div>
                         </Link>
                     </div>
@@ -37,16 +36,16 @@ const NavBar = () => {
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                         
                             <li className="nav-item">
-                                <Link className="nav-link active" to={`/category/${categoryId}`}>HOME</Link>
+                                <NavLink className="nav-link active" to={'/'}>HOME</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={`/category/${categoryId}`}>NOVEDADES</Link>
+                                <NavLink className="nav-link" to={'/category/novedades'}>NOVEDADES</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={`/category/${categoryId}`}>TEMÁTICA</Link>
+                                <NavLink className="nav-link" to={'/category/clasicos'}>CLÁSICOS</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={`/category/${categoryId}`}>TEMÁTICA</Link>
+                                <NavLink className="nav-link" to={'/'}>NOSOTROS</NavLink>
                             </li>
                         </ul>
                     </div>

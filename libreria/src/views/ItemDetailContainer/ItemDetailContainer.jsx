@@ -9,23 +9,18 @@ function ItemDetailContainer() {
 
     useEffect(() => {
         setTimeout(() => {
-            fetch('../src/libros.json')
-            .then((response) => response.json())
-            .then((json) => setLibros(json))
+            fetch('../libros.json')
+                .then((response) => response.json())
+                .then((json) => setLibros(json.filter(lib => lib.legajo === Number(id))))
         }, 2000)
-    }, []);  
+    }, [id]);  
     
     return (
-        <div className="container-fluid">
-            {libro.map((lib) => {
-                if(lib.legajo == id){
-                    <div key={lib.legajo}>
-                        <ItemDetail data={lib}/>
-                        {console.log(lib)}
-                    </div>
-                }
-            })}
-        </div>
+        libro.map((lib) => (
+            <div key={lib.legajo}>
+                <ItemDetail data={lib}/>
+            </div>
+        ))
     )
 }
 

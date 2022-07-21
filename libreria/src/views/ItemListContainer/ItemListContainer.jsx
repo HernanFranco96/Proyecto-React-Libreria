@@ -1,6 +1,7 @@
 import ItemCount from "../../components/ItemCount/ItemCount";
 import ItemList from "../../components/ItemList/ItemList";
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
     const onAdd = (count) => {
@@ -9,11 +10,22 @@ const ItemListContainer = () => {
 
     const [libros, setLibros] = useState([]);
 
+    const { categoryId } = useParams();
+
     useEffect(() => {
-        fetch('./src/libros.json')
-            .then((response) => response.json())
-            .then((json) => setLibros(json))
-    }, []);
+        if(categoryId){
+            setTimeout(() => {
+                fetch('../libros.json')
+                .then((response) => response.json())
+                .then((json) => setLibros(json.filter(lib => lib.categoria === categoryId)))
+            }, 1000)
+        } else{
+            fetch('/libros.json')
+                .then((response) => response.json())
+                .then((json) => setLibros(json))
+        }
+  
+    }, [categoryId]);
 
     return <>
         <div className="alert alert-primary" role="alert">
