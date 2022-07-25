@@ -13,8 +13,9 @@ const ItemCount = (props) => {
         (count > 0) ? updateCount(count - 1) : alert('No hay stock');
     };
 
-    const agregarCarrito = () => {
+    const agregarCarrito = (event) => {
         props.onAdd(count);
+        event.stopPropagation();
     }
 
     useEffect(() => {
@@ -24,7 +25,7 @@ const ItemCount = (props) => {
     return <>
         <div className="carta card mx-auto">
             <div className="card-header">
-                Titulo
+                {props.titulo}
             </div>
             <div className="card-body">
                 <ul>

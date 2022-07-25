@@ -1,3 +1,16 @@
-.card{
+.libros{
     width: 18rem;
+    margin: 1rem;
+    height: 60rem;
+    border-radius: 1rem;
+}
+
+.card-img-top{
+    height: 38rem;
+    border-radius: 1rem;
+}
+
+.btn{
+    bottom: 0;
+    font-size: 2rem;
 }
