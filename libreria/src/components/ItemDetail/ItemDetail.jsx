@@ -2,16 +2,18 @@ import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.css'
 import { useState } from 'react';
 import InputCount from '../InputCount/InputCount';
+import { useCartContext } from '../../context/CartContext';
 
 const ItemDetail = ({data}) => {
 
     const [state, setState] = useState(0);
 
+    const { addToCart } = useCartContext();
+
     const onAdd = (count) => {
         (count > 0 && count <= 5) ? setState(count) : null;
+        addToCart({...data, cantidad: count})
     };
-
-    console.log(state)
 
     return <>
         <div className="card">

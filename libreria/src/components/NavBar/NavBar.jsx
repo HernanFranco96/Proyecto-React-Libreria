@@ -22,7 +22,7 @@ const NavBar = () => {
                     </div>
                     <div className="col">
                         <div className="navbar-brand">
-                            <Link to={'/'}>
+                            <Link to={'/cart'}>
                                 <CartWidget/>
                             </Link>
                         </div>
