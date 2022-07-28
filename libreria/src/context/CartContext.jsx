@@ -8,6 +8,32 @@ const CartContextProvider = ( {children} ) => {
 
     const [cartList, setCartList] = useState([]);
 
+    const precioTotal = () => {
+        let acumulador = 0;
+        cartList.forEach(lib => {
+            acumulador += lib.precio;
+        });
+        return acumulador;
+    }
+
+    const contadorCarrito = () => {
+        let contador = 0;
+        cartList.forEach(lib => {
+            contador += lib.cantidad;
+        });
+        return contador;
+    }
+
+    const removeItem = (id) => {
+        let index = cartList.findIndex(product => product === id);
+        if(index !== -1){
+            cartList.splice(index,1);
+            setCartList([
+                ...cartList
+            ]);
+        }
+    }
+
     const clear = () =>{
         setCartList([])
     };
@@ -48,7 +74,10 @@ const CartContextProvider = ( {children} ) => {
         <CartContext.Provider value={{
             cartList,
             clear,
-            addToCart
+            addToCart,
+            precioTotal,
+            contadorCarrito,
+            removeItem
         }}>
             {children} 
         </CartContext.Provider>

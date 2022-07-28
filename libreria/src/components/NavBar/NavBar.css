@@ -1,3 +1,13 @@
+.logo-carrito{
+    display: flex;
+    align-items: center;
+}
+
+.logo-carrito p{
+    margin-top: 20px;
+    color: #000;
+    font-weight: bold;
+}
 
 .nav{
     background-color: #795548;
@@ -21,5 +31,9 @@
 
 .btn:active{
     border: none;
+}
+
+.carritoVacio{
+    display: none;
 }
 

@@ -1,8 +1,9 @@
 import CartWidget from '../CartWidget/CartWidget';
 import { Link, NavLink } from 'react-router-dom';
+import { useCartContext } from '../../context/CartContext';
 
 const NavBar = () => {
-
+    const { cartList, contadorCarrito } = useCartContext();
     return <>
         <nav className='nav navbar navbar-expand-lg bg-color'>
             <div className="container-fluid d-flex flex-column align-items-center">
@@ -21,7 +22,8 @@ const NavBar = () => {
                         </form>
                     </div>
                     <div className="col">
-                        <div className="navbar-brand">
+                        <div className={(cartList.length !== 0) ? 'logo-carrito navbar-brand' : 'carritoVacio'}>
+                            <p>{contadorCarrito()}</p>
                             <Link to={'/cart'}>
                                 <CartWidget/>
                             </Link>

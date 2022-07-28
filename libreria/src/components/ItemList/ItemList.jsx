@@ -1,6 +1,7 @@
 import Item from '../Item/Item';
+import {memo} from 'react';
 
-const ItemList = ({libros}) => {
+const ItemList = memo(({libros}) => {
     return <>
         {libros.map((lib) => (
             <div key={lib.legajo}>
@@ -8,6 +9,6 @@ const ItemList = ({libros}) => {
             </div>
         ))}
     </>;
-};
+});
 
 export default ItemList;
