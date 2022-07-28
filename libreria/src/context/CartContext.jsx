@@ -12,18 +12,20 @@ const CartContextProvider = ( {children} ) => {
         setCartList([])
     };
 
-    const msjAgregar = (libro) => {
-        console.log(`"${libro.titulo}" fue agregado al carrito.`)
+    const message = (libro, valor) => {
+        valor === 1 ? alert(`Se agregaron ${libro.cantidad} libros de "${libro.titulo}" al carrito.`) : alert(`Se acumularon ${libro.cantidad} libros mas de "${libro.titulo}" al carrito.`)
     }
 
     const isInCart = (id) => {
         let libro = cartList.find(lib => lib.legajo === id.legajo)
         if(libro !== undefined){
-            alert(`"${id.titulo}" ya esta agregado al carrito.`);
+            let index = cartList.indexOf(libro);
+            cartList[index].cantidad += id.cantidad;
+            message(id, 0);
             return -1;
         }
 
-        msjAgregar(id);
+        message(id, 1);
         setCartList([
             ...cartList,
             id
@@ -32,7 +34,7 @@ const CartContextProvider = ( {children} ) => {
 
     const addToCart = (objProducto) =>{
         if(cartList.length === 0){
-            msjAgregar(objProducto);
+            message(objProducto, 1);
             setCartList([
                 ...cartList,
                 objProducto
