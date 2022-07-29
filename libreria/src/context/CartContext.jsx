@@ -11,7 +11,7 @@ const CartContextProvider = ( {children} ) => {
     const precioTotal = () => {
         let acumulador = 0;
         cartList.forEach(lib => {
-            acumulador += lib.precio;
+            acumulador += (lib.precio * lib.cantidad);
         });
         return acumulador;
     }
