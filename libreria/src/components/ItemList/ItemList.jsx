@@ -2,9 +2,9 @@ import Item from '../Item/Item';
 import {memo} from 'react';
 
 const ItemList = memo(({libros}) => {
-    return <>
-        {libros.map((lib) => (
-            <div key={lib.legajo}>
+    return <>    
+        {libros.id.map((lib) => (
+            <div key={lib.id}>
                 <Item data={lib}/>
             </div>
         ))}

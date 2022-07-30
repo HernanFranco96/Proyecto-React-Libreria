@@ -2,35 +2,42 @@
 import ItemList from "../../components/ItemList/ItemList";
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 const ItemListContainer = () => {
-    // const onAdd = (count) => {
-    //     (count > 0 && count <= 5) ? alert('Usted selecciono un total de: ' + count) : null;
-    // };
 
-    const [libros, setLibros] = useState([]);
+    const [libros, agregarLibros] = useState([]);
 
     const { categoryId } = useParams();
 
     useEffect(() => {
+        const baseDeDatos = getFirestore();
+        const coleccion = collection(baseDeDatos, 'Items');
         if(categoryId){
             setTimeout(() => {
-                fetch('../libros.json')
-                .then((response) => response.json())
-                .then((json) => setLibros(json.filter(lib => lib.categoria === categoryId)))
-            }, 2000)
-        } else{
-            fetch('/libros.json')
-                .then((response) => response.json())
-                .then((json) => setLibros(json))
-        }
+                const coleccionFiltrada = query(coleccion, where('categoria','==',categoryId))
+                getDocs(coleccionFiltrada)
+                    .then(respuesta => agregarLibros({ id: respuesta.docs.map(libro => ({ id: libro.id, ...libro.data() }))}))
+                    .catch(err => console.log(err))
+            }, 2000);
+        }else{
+            getDocs(coleccion)
+            .then(respuesta => agregarLibros({ id: respuesta.docs.map(libro => ({ id: libro.id, ...libro.data() }))}))
+            .catch(err => console.log(err))
+        } 
     }, [categoryId]);
+
+    console.log(libros);
 
     return <>
         <div className="alert alert-primary" role="alert">
-            {/* <ItemCount stock={5} initial={1} onAdd={onAdd}/> */}
             <div className="container-fluid d-flex flex-wrap justify-content-center">
-                <ItemList libros={libros}/>
+                { 
+                    libros.length !== 0 ? 
+                        <ItemList libros={libros}/>
+                    :
+                        ''
+                }
             </div>
         </div>
     </>;
