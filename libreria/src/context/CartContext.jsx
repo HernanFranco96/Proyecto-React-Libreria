@@ -34,7 +34,7 @@ const CartContextProvider = ( {children} ) => {
         }
     }
 
-    const clear = () =>{
+    const vaciarCarrito = () =>{
         setCartList([])
     };
 
@@ -73,7 +73,7 @@ const CartContextProvider = ( {children} ) => {
     return(
         <CartContext.Provider value={{
             cartList,
-            clear,
+            vaciarCarrito,
             addToCart,
             precioTotal,
             contadorCarrito,

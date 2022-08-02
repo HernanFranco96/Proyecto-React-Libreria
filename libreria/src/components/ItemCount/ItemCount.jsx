@@ -6,16 +6,20 @@ const ItemCount = (props) => {
     const [count, updateCount] = useState(props.initial);
 
     const incrementar = () => {
-        (count < props.stock) ? updateCount(count + 1) : alert('No puede adquirir mas productos.');
+        (count < props.stock && count < 5) ? updateCount(count + 1) : alert('No puede adquirir mas productos.');
     };
 
     const decrementar = () => {
-        (count > 0) ? updateCount(count - 1) : alert('No hay stock');
+        (props.stock > 0) ? updateCount(count - 1) : alert('No hay stock');
     };
 
     const agregarCarrito = (event) => {
-        props.onAdd(count);
-        event.stopPropagation();
+        if(props.stock !== 0){
+            props.onAdd(count);
+            event.stopPropagation();
+        }else{
+            alert('No hay stock')
+        }
     }
 
     useEffect(() => {

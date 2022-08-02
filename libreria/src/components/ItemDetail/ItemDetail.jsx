@@ -20,7 +20,7 @@ const ItemDetail = ({data}) => {
 
             {
                 state === 0 ?
-                    <ItemCount stock={5} initial={1} onAdd={onAdd} titulo={data.titulo}/>
+                    <ItemCount stock={data.stock} initial={1} onAdd={onAdd} titulo={data.titulo}/>
                 :
                     <InputCount/>
                 

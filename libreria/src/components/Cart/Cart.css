@@ -6,7 +6,7 @@
 }
 
 .carta-carrito{
-    width: 70%;
+    width: 75%;
     border: none;
     border-radius: 7px;
     box-shadow: 2px 3px 2px rgb(131, 129, 129);
@@ -28,6 +28,7 @@
 }
 
 .precio-total{
+    text-align: center;
     color: #000;
 }
 
@@ -45,6 +46,7 @@
 }
 
 .btn-vaciar{
+    width: 40%;
     color: rgb(237, 232, 232) !important;
     background-color: rgb(23, 201, 142);
 }
@@ -54,15 +56,20 @@
 }
 
 .btn-volverHome{
+    display: block;
     text-decoration: none;
     border: 2px solid rgb(113, 110, 110);
     border-radius: 5px;
     padding: 5px;
-    margin-top: 10px;
+    margin-top: 50px;
     color: rgb(76, 74, 74);
 }
 
 .btn-volverHome:hover{
     color: rgb(49, 48, 48);
     background-color: rgb(122, 126, 125);
+}
+
+label{
+    color:rgb(49, 48, 48);
 }
