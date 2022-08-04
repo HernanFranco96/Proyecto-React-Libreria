@@ -19,7 +19,7 @@ const ItemListContainer = () => {
                 getDocs(coleccionFiltrada)
                     .then(respuesta => agregarLibros({ id: respuesta.docs.map(libro => ({ id: libro.id, ...libro.data() }))}))
                     .catch(err => console.log(err))
-            }, 2000);
+            }, 1000);
         }else{
             getDocs(coleccion)
             .then(respuesta => agregarLibros({ id: respuesta.docs.map(libro => ({ id: libro.id, ...libro.data() }))}))

@@ -7,19 +7,13 @@ const NavBar = () => {
     return <>
         <nav className='nav navbar navbar-expand-lg bg-color'>
             <div className="container-fluid d-flex flex-column align-items-center">
-                <div className="row row-cols-3 d-flex align-items-center flex-nowrap w-75">
+                <div className="row row-cols-3 d-flex align-items-center justify-content-between flex-nowrap">
                     <div className="col">
                         <Link to={'/'}> 
                             <div className="navbar-brand">
-                                <img src="./assets/logo/logo.png" className="w-50"/>
+                                <img src="./assets/logo/logo.png" className="w-100"/>
                             </div>
                         </Link>
-                    </div>
-                    <div className="col mx-4">
-                        <form className="d-flex" role="search">
-                            <input className="form-control me-3" type="search" placeholder="" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">BUSCAR</button>
-                        </form>
                     </div>
                     <div className="col">
                         <div className={(cartList.length !== 0) ? 'logo-carrito navbar-brand' : 'carritoVacio'}>

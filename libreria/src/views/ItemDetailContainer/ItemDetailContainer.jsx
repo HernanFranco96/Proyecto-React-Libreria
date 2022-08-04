@@ -16,7 +16,7 @@ function ItemDetailContainer() {
             getDocs(libroSeleccionado)
                 .then(respuesta => agregarLibros( respuesta.docs.map(libro => ({ id: libro.id, ...libro.data() }))))
                 .catch(err => console.log(err))
-        }, 2000);
+        }, 1000);
     }, [id]);  
 
     return (

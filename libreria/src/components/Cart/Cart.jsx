@@ -2,6 +2,7 @@ import { useCartContext } from '../../context/CartContext';
 import './Cart.css';
 import { Link } from 'react-router-dom';
 import { addDoc, collection, getDocs, getFirestore, writeBatch, where, documentId, query } from 'firebase/firestore';
+import Formulario from '../Formulario/Formulario';
 
 const Cart = () => {
   const { cartList, vaciarCarrito, precioTotal, removeItem } = useCartContext();
@@ -26,31 +27,37 @@ const Cart = () => {
     carrito.appendChild(p);
   }
 
-  const verificarEmail = (email) => {
-    if(email === 'false') 
-      mensajeEmailInvalido();
-    else
-      return true;
+  const agregarDatos = (datos) => {
+    const orden = {
+      nombre: datos.nombre,
+      telefono: datos.telefono,
+      email: datos.email,
+      verificarEmail: datos.verificarEmail
+    }
+    generarOrden(orden);
+  }
+  
+  const verificarEmail = (orden) => {
+    let boolean = false;
+    if(orden.email.length > 0 && orden.verificarEmail.length > 0)
+      orden.email === orden.verificarEmail ? boolean = true : mensajeEmailInvalido();
+    return boolean;
   }
 
-  const generarOrden = async () => {
-    const orden = {};
-    orden.comprador = {
-      nombre: document.getElementById('nombre').value,
-      telefono: document.getElementById('telefono').value,
-      email: (document.getElementById('email').value === document.getElementById('validarEmail').value) ? document.getElementById('email').value : 'false'
-    };
-
-    if(verificarEmail(orden.comprador.email)){
+  const generarOrden = async (orden) => {
+    console.log(orden)
+    if(verificarEmail(orden)){
+      
       orden.items = cartList.map(libro => {
         return {
           legajo: libro.legajo,
           nombre: libro.titulo,
-          precio: libro.precio
+          precio: libro.precio,
+          cantidad: libro.cantidad
         }
-      });
-  
-      orden.total = precioTotal();
+      })
+
+      orden.precioTotal = precioTotal();
 
       // GENERAMOS ORDEN
       const db = getFirestore();
@@ -82,7 +89,7 @@ const Cart = () => {
 
   return (
     <>
-      <div id='carrito'>
+      <div id='carrito' className='mt-5'>
         <div className={(cartList.length !== 0) ? 'contenedor-carrito' : 'carritoVacio'}>
           <div className='container-fluid d-flex justify-content-center'>
             <div className='row md-6 d-flex justify-content-center'>
@@ -100,27 +107,7 @@ const Cart = () => {
               {precioTotal() !== 0 ? <p className="precio-total">{`Precio total: $${precioTotal()}`}</p> : <p></p>}
               <button className='btn-vaciar btn btn-primary' onClick={vaciarCarrito}>Vaciar carrito</button>
             </div>
-            <form className='row md-6 d-flex flex-column flex-wrap-wrap'>
-              <div className="col-md-12">
-                {/* <label for="nombre" className="form-label">Nombre</label> */}
-                <input type="text" className="form-control" id='nombre' />
-              </div>
-              <div className="col-md-12">
-                {/* <label for="telefono" className="form-label">Telefono</label> */}
-                <input type="text" className="form-control" id='telefono' />
-              </div>
-              <div className="col-md-12">
-                {/* <label for="email" className="form-label">Email</label> */}
-                <input type="email" className="form-control" id='email' />
-              </div>
-              <div className="col-md-12">
-                {/* <label for="validarEmail" className="form-label">Validar Email</label> */}
-                <input type="email" className="form-control" id='validarEmail' />
-              </div>
-              <div className="col-12 mt-5">
-                <button type="button" className="btn btn-primary" onClick={() => generarOrden()}>Generar orden</button>
-              </div>
-            </form>
+            <Formulario agregarDatos={agregarDatos}/>
           </div>
         </div>
         <Link to={'/'} className={(cartList.length === 0) ? 'btn-volverHome' : 'carritoVacio'}>Ir al Home</Link>
