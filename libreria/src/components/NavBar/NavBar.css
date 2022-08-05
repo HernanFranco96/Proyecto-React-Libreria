@@ -10,17 +10,22 @@
 }
 
 .nav{
-    background-color: #795548;
+    background-color: #52280a;
     width: 100%;
 }
 
 .nav-link{
-    color: #BCAAA4 !important;
+    font-size: 23px;
+    color: #c8c4be !important;
+}
+
+.nav-link:hover{
+    color: #4b3832 !important;
 }
 
 .btn{
     background-color: #5D4037;
-    color: #BCAAA4 !important;
+    color: #4a4746 !important;
     border: none;
 }
 

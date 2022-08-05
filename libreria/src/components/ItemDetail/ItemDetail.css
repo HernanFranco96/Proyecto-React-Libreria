@@ -1,6 +1,18 @@
-.card{
-    width: 25rem;
+.contenedor-ItemDetail{
+    width: auto;
     color: #000;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.carta-ItemDetail{
+    width: 30rem;
+    height: auto;
+    margin: 1rem;
+    box-shadow: 2px 3px 3px #000;
+    border-radius: 1rem;
+    padding: 10px;
 }
 
 .descripcion{

@@ -57,12 +57,13 @@
 }
 
 .btn-volverHome{
+    width: 125px;
+    margin: auto;
     display: block;
     text-decoration: none;
     border: 2px solid rgb(113, 110, 110);
     border-radius: 5px;
-    padding: 5px;
-    margin-top: 50px;
+    padding: 15px;
     color: rgb(76, 74, 74);
 }
 

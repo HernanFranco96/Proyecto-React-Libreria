@@ -1,0 +1,10 @@
+.input-count{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-count .btn{
+    margin: 5px;
+}

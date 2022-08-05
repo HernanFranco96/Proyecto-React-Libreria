@@ -6,7 +6,7 @@ const Item = ({data}) => {
         <div className="libros card">
             <img src={`../${data.url}`} className="card-img-top" alt="img"/>
             <div className="card-body">
-                <h2 className="card-title">{data.titulo}</h2>
+                <h5 className="card-title">{data.titulo}</h5>
                 <p className="card-text">{data.autor}</p>
                 <p className="card-text">${data.precio}</p>
                 <p className="card-text">Stock: {data.stock}</p>

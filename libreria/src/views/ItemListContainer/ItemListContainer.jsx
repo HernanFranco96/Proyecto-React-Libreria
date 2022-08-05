@@ -28,15 +28,13 @@ const ItemListContainer = () => {
     }, [categoryId]);
 
     return <>
-        <div className="alert alert-primary" role="alert">
-            <div className="container-fluid d-flex flex-wrap justify-content-center">
-                { 
-                    cargando ?
-                        <Loading />
-                    :
-                        <ItemList libros={libros}/>
-                }
-            </div>
+        <div className="container-fluid d-flex flex-wrap justify-content-center">
+            { 
+                cargando ?
+                    <Loading />
+                :
+                    <ItemList libros={libros}/>
+            }
         </div>
     </>;
 };

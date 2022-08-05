@@ -27,7 +27,7 @@ const ItemCount = (props) => {
     });
 
     return <>
-        <div className="carta card mx-auto">
+        <div className="carta-itemCount card mx-auto">
             <div className="card-header">
                 {props.titulo}
             </div>
@@ -36,7 +36,7 @@ const ItemCount = (props) => {
                     <li>
                         <a href="#" onClick={decrementar}>-</a>
                     </li>
-                    <li>{count}</li>
+                    <li className='cantidad'>{count}</li>
                     <li>
                         <a href="#" onClick={incrementar}>+</a>
                     </li>

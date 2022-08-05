@@ -12,7 +12,7 @@ const Cart = () => {
     let carrito = document.getElementById('carrito');
     let p = document.createElement('p');
     p.innerHTML = `
-      <div class="alert alert-danger" role="alert">
+      <div class="alert alert-danger w-25 mx-auto" role="alert">
         Su email no es valido.
       </div>`;
     carrito.appendChild(p);
@@ -22,7 +22,7 @@ const Cart = () => {
     let carrito = document.getElementById('carrito');
     let p = document.createElement('p');
     p.innerHTML = `
-      <div class="alert alert-success" role="alert">
+      <div class="alert alert-success w-25 mx-auto" role="alert">
         Orden generada: ${orden}
       </div>`;
     carrito.appendChild(p);

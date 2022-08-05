@@ -1,0 +1,8 @@
+.cargando{
+    width: 170px;
+    display: block;
+    box-shadow: 3px 3px 3px rgb(58, 25, 2);
+    color: rgb(78, 75, 75);
+    padding: 10px;
+    margin: 20px auto;
+}

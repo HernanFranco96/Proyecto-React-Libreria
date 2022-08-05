@@ -16,16 +16,16 @@ const ItemDetail = ({data}) => {
     };
 
     return <>
-        <div className="card">
-            {
-                state === 0 ?
-                    <ItemCount stock={data.stock} initial={1} onAdd={onAdd} titulo={data.titulo}/>
-                :
-                    <InputCount/>
-            }
-            <div className="card-body">
+         {
+            state === 0 ?
+                <ItemCount stock={data.stock} initial={1} onAdd={onAdd} titulo={data.titulo}/>
+            :
+                <InputCount/>
+        }
+        <div className="contenedor-ItemDetail">
+            <div className="carta-ItemDetail">
                 <img src={`../${data.url}`} className="card-img-top" alt="img"/>
-                <h2 className="card-title">{data.titulo}</h2>
+                <h4 className="card-title">{data.titulo}</h4>
                 <p className="card-text">{data.autor}</p>
                 <p className="card-text">${data.precio}</p>
                 <p className="card-text descripcion">{data.descripcion}</p>
