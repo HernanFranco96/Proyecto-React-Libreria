@@ -3,6 +3,7 @@
 # Instalación
 
 ```sh
+git https://github.com/HernanFranco96/Proyecto-React-Libreria.git
 cd libreria
 npm i
 npm run dev
@@ -10,12 +11,12 @@ npm run dev
 
 # Dependencias
 
-- react 18.0.0
-- react-dom 18.0.0
-- firebase 9.9.1
-- react-hook-form 7.34.0
-- react-router-dom 6.3.0
+- react - 18.0.0 - Libreria framework principal del proyecto.
+- firebase - 9.9.1 - Usado para acceder a Firestore
+- react-hook-form - 7.34.0 - Usado para crear formularios y validarlos.
+- react-router-dom - 6.3.0 - Usado para la navegación y rutas.
+- vite - 2.9.9 - Empaquetador
 
-#### devDependencias
+## License
 
-- vite 2.9.9
+**Hernán Franco**
