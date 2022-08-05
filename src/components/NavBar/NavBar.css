@@ -1,0 +1,44 @@
+.logo-carrito{
+    display: flex;
+    align-items: center;
+}
+
+.logo-carrito p{
+    margin-top: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav{
+    background-color: #52280a;
+    width: 100%;
+}
+
+.nav-link{
+    font-size: 23px;
+    color: #c8c4be !important;
+}
+
+.nav-link:hover{
+    color: #4b3832 !important;
+}
+
+.btn{
+    background-color: #5D4037;
+    color: #4a4746 !important;
+    border: none;
+}
+
+.btn:hover{
+    background-color: #3E2723;
+    border: none;
+}
+
+.btn:active{
+    border: none;
+}
+
+.carritoVacio{
+    display: none;
+}
+

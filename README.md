@@ -4,7 +4,6 @@
 
 ```sh
 git https://github.com/HernanFranco96/Proyecto-React-Libreria.git
-cd libreria
 npm i
 npm run dev
 ```
