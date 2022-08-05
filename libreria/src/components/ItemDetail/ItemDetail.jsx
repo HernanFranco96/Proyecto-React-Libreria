@@ -17,15 +17,12 @@ const ItemDetail = ({data}) => {
 
     return <>
         <div className="card">
-
             {
                 state === 0 ?
                     <ItemCount stock={data.stock} initial={1} onAdd={onAdd} titulo={data.titulo}/>
                 :
                     <InputCount/>
-                
             }
-
             <div className="card-body">
                 <img src={`../${data.url}`} className="card-img-top" alt="img"/>
                 <h2 className="card-title">{data.titulo}</h2>

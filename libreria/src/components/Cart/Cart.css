@@ -1,12 +1,13 @@
 .contenedor-carrito{
     width: 100%;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row nowrap;
+    justify-content: center;
     align-items: center;
 }
 
 .carta-carrito{
-    width: 75%;
+    width: 70%;
     border: none;
     border-radius: 7px;
     box-shadow: 2px 3px 2px rgb(131, 129, 129);

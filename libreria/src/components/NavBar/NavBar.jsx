@@ -30,7 +30,6 @@ const NavBar = () => {
                     </button>
                     <div className='collapse navbar-collapse' id="navbarSupportedContent">
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-                        
                             <li className="nav-item">
                                 <NavLink className="nav-link active" to={'/'}>HOME</NavLink>
                             </li>
@@ -39,9 +38,6 @@ const NavBar = () => {
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to={'/category/clasicos'}>CLÁSICOS</NavLink>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to={'/'}>NOSOTROS</NavLink>
                             </li>
                         </ul>
                     </div>

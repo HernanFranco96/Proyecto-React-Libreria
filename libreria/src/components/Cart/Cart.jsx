@@ -3,9 +3,10 @@ import './Cart.css';
 import { Link } from 'react-router-dom';
 import { addDoc, collection, getDocs, getFirestore, writeBatch, where, documentId, query } from 'firebase/firestore';
 import Formulario from '../Formulario/Formulario';
+import CartList from '../CartList/CartList';
 
 const Cart = () => {
-  const { cartList, vaciarCarrito, precioTotal, removeItem } = useCartContext();
+  const { cartList, vaciarCarrito, precioTotal } = useCartContext();
 
   const mensajeEmailInvalido = () => {
     let carrito = document.getElementById('carrito');
@@ -45,7 +46,6 @@ const Cart = () => {
   }
 
   const generarOrden = async (orden) => {
-    console.log(orden)
     if(verificarEmail(orden)){
       
       orden.items = cartList.map(libro => {
@@ -88,31 +88,19 @@ const Cart = () => {
   }
 
   return (
-    <>
       <div id='carrito' className='mt-5'>
         <div className={(cartList.length !== 0) ? 'contenedor-carrito' : 'carritoVacio'}>
-          <div className='container-fluid d-flex justify-content-center'>
+          {/* <div className='container-fluid d-flex justify-content-center'> */}
             <div className='row md-6 d-flex justify-content-center'>
-              {
-                cartList.map(data =>
-                  <div className='carta-carrito card' key={data.legajo}>
-                    <img src={`../${data.url}`} className="card-img-top" alt="img" />
-                    <h2 className="card-text">{data.titulo}</h2>
-                    <p className="card-title">Precio: ${data.precio} c/u</p>
-                    <p className="card-text">Cantidad: {data.cantidad}</p>
-                    <button type="button" className="btn-eliminar btn btn-danger" onClick={() => removeItem(data)}>Eliminar</button>
-                  </div>
-                )
-              }
+              <CartList />
               {precioTotal() !== 0 ? <p className="precio-total">{`Precio total: $${precioTotal()}`}</p> : <p></p>}
               <button className='btn-vaciar btn btn-primary' onClick={vaciarCarrito}>Vaciar carrito</button>
             </div>
             <Formulario agregarDatos={agregarDatos}/>
-          </div>
+          {/* </div> */}
         </div>
         <Link to={'/'} className={(cartList.length === 0) ? 'btn-volverHome' : 'carritoVacio'}>Ir al Home</Link>
       </div>
-    </>
   )
 }
 

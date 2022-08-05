@@ -1,14 +1,16 @@
-import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { collection, getFirestore, query, where, limit, getDocs } from 'firebase/firestore';
+import Loading from "../../components/Loading/Loading";
+import ItemDetailList from "../../components/ItemDetailList/ItemDetailList";
 
 function ItemDetailContainer() {
     const [libro, agregarLibros] = useState([]);
+    const [cargando, ingresarValor] = useState([true]);
 
     const { id } = useParams();
 
-    useEffect(() => {
+    const llamarFirebase = () => {
         const baseDeDatos = getFirestore();
         const coleccion = collection(baseDeDatos, 'Items');
         const libroSeleccionado = query(coleccion, where('legajo','==', Number(id)), limit(1));
@@ -16,15 +18,24 @@ function ItemDetailContainer() {
             getDocs(libroSeleccionado)
                 .then(respuesta => agregarLibros( respuesta.docs.map(libro => ({ id: libro.id, ...libro.data() }))))
                 .catch(err => console.log(err))
+                .finally(() => ingresarValor(false))
         }, 1000);
+    }
+
+    useEffect(() => {
+        llamarFirebase();
     }, [id]);  
 
     return (
-        libro.map((lib) => (
-            <div key={lib.id}>
-                <ItemDetail data={lib}/>
-            </div>
-        ))
+    <>
+        {
+            cargando 
+            ? 
+                <Loading />
+            :
+                <ItemDetailList libro={libro} />
+        }
+    </> 
     )
 }
 
