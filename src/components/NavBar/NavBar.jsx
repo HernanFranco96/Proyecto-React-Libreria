@@ -11,7 +11,7 @@ const NavBar = () => {
                     <div className="col">
                         <Link to={'/'}> 
                             <div className="navbar-brand">
-                                <img src="./assets/logo/logo.png" className="w-100"/>
+                                <img src="./logo/logo.png" className="w-100"/>
                             </div>
                         </Link>
                     </div>

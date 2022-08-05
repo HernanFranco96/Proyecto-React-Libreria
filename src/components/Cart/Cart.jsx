@@ -88,7 +88,7 @@ const Cart = () => {
   }
 
   return (
-      <div id='carrito' className='mt-5'>
+      <div id="carrito" className='mt-5'>
         <div className={(cartList.length !== 0) ? 'contenedor-carrito' : 'carritoVacio'}>
           {/* <div className='container-fluid d-flex justify-content-center'> */}
             <div className='row md-6 d-flex justify-content-center'>

@@ -1,7 +1,7 @@
 .contenedor-carrito{
     width: 100%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
 }
@@ -47,7 +47,8 @@
 }
 
 .btn-vaciar{
-    width: 40%;
+    width: 20%;
+    margin: 20px auto;
     color: rgb(237, 232, 232) !important;
     background-color: rgb(23, 201, 142);
 }
@@ -58,7 +59,7 @@
 
 .btn-volverHome{
     width: 125px;
-    margin: auto;
+    margin: 20px auto;
     display: block;
     text-decoration: none;
     border: 2px solid rgb(113, 110, 110);
