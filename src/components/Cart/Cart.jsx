@@ -91,7 +91,7 @@ const Cart = () => {
       <div id="carrito" className='mt-5'>
         <div className={(cartList.length !== 0) ? 'contenedor-carrito' : 'carritoVacio'}>
           {/* <div className='container-fluid d-flex justify-content-center'> */}
-            <div className='row md-6 d-flex justify-content-center'>
+            <div className='row md-12 d-flex justify-content-center'>
               <CartList />
               {precioTotal() !== 0 ? <p className="precio-total">{`Precio total: $${precioTotal()}`}</p> : <p></p>}
               <button className='btn-vaciar btn btn-primary' onClick={vaciarCarrito}>Vaciar carrito</button>

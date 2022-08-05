@@ -6,11 +6,11 @@ const ItemCount = (props) => {
     const [count, updateCount] = useState(props.initial);
 
     const incrementar = () => {
-        (count < props.stock && count < 5) ? updateCount(count + 1) : alert('No puede adquirir mas productos.');
+        (count < props.stock && count < 5) ? updateCount(count + 1) : document.getElementById('mensajeNoIncrementa').className = 'activarMensaje';
     };
 
     const decrementar = () => {
-        (props.stock > 0) ? updateCount(count - 1) : alert('No hay stock');
+        (props.stock > 0) ? updateCount(count - 1) : document.getElementById('mensajeNoHayStock').className = 'activarMensaje';
     };
 
     const agregarCarrito = (event) => {
@@ -18,7 +18,7 @@ const ItemCount = (props) => {
             props.onAdd(count);
             event.stopPropagation();
         }else{
-            alert('No hay stock')
+            document.getElementById('mensajeNoHayStock').className = 'activarMensaje';
         }
     }
 
@@ -42,6 +42,8 @@ const ItemCount = (props) => {
                     </li>
                 </ul>
                 <button type="button" className="btn btn-outline-primary" id='btn' onClick={agregarCarrito}>Agregar al carrito</button>
+                <div id='mensajeNoHayStock' className='desaparecerMensaje'>No hay Stock.</div>
+                <div id='mensajeNoIncrementa' className='desaparecerMensaje'>No puede incrementar mas la cantidad.</div>
             </div>
         </div>
     </>;

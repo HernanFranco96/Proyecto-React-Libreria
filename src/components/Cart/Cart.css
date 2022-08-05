@@ -7,7 +7,7 @@
 }
 
 .carta-carrito{
-    width: 70%;
+    width: 100%;
     border: none;
     border-radius: 7px;
     box-shadow: 2px 3px 2px rgb(131, 129, 129);
@@ -29,6 +29,7 @@
 }
 
 .precio-total{
+    font-size: 2rem;
     text-align: center;
     color: #000;
 }
@@ -49,12 +50,12 @@
 .btn-vaciar{
     width: 20%;
     margin: 20px auto;
-    color: rgb(237, 232, 232) !important;
+    color: rgb(255, 255, 255) !important;
     background-color: rgb(23, 201, 142);
 }
 
 .btn-vaciar:hover{
-    background-color: rgb(20, 141, 100);
+    background-color: rgb(22, 175, 124);
 }
 
 .btn-volverHome{
