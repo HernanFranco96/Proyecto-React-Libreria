@@ -36,7 +36,8 @@ const CartContextProvider = ( {children} ) => {
         let indice = cartList.find(lib => lib.legajo === libro.legajo)
         if(indice !== undefined){
             let index = cartList.indexOf(indice);
-            ingresarNumero(contador + (cartList[index].cantidad += libro.cantidad));
+            cartList[index].cantidad += libro.cantidad;
+            ingresarNumero(contador + libro.cantidad);
             return -1;
         }
         setCartList([
