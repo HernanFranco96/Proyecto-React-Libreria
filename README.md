@@ -16,6 +16,9 @@ npm run dev
 - react-router-dom - 6.3.0 - Usado para la navegación y rutas.
 - vite - 2.9.9 - Empaquetador
 
+## Sitio
+- tps://benevolent-gecko-52f234.netlify.app/
+
 ## License
 
 **Hernán Franco**
