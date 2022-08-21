@@ -17,7 +17,7 @@ npm run dev
 - vite - 2.9.9 - Empaquetador
 
 ## Sitio
-- tps://benevolent-gecko-52f234.netlify.app/
+- [benevolent-gecko-52f234.netlify.app/](https://benevolent-gecko-52f234.netlify.app/)
 
 ## License
 
