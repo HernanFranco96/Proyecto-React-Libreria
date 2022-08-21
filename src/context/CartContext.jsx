@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-    
+
 const CartContext = createContext([])
 
 export const useCartContext = () => useContext(CartContext)
@@ -7,6 +7,7 @@ export const useCartContext = () => useContext(CartContext)
 const CartContextProvider = ( {children} ) => {
 
     const [cartList, setCartList] = useState([]);
+    const [contador, ingresarNumero] = useState(0);
 
     const precioTotal = () => {
         let acumulador = 0;
@@ -16,18 +17,11 @@ const CartContextProvider = ( {children} ) => {
         return acumulador;
     }
 
-    const contadorCarrito = () => {
-        let contador = 0;
-        cartList.forEach(lib => {
-            contador += lib.cantidad;
-        });
-        return contador;
-    }
-
     const removeItem = (id) => {
         let index = cartList.findIndex(product => product === id);
         if(index !== -1){
-            cartList.splice(index,1);
+            let libro = cartList.splice(index,1);
+            libro.forEach(lib => {ingresarNumero(contador - lib.cantidad); })
             setCartList([
                 ...cartList
             ]);
@@ -38,28 +32,29 @@ const CartContextProvider = ( {children} ) => {
         setCartList([])
     };
 
-    const isInCart = (id) => {
-        let libro = cartList.find(lib => lib.legajo === id.legajo)
-        if(libro !== undefined){
-            let index = cartList.indexOf(libro);
-            cartList[index].cantidad += id.cantidad;
+    const isInCart = (libro) => {
+        let indice = cartList.find(lib => lib.legajo === libro.legajo)
+        if(indice !== undefined){
+            let index = cartList.indexOf(indice);
+            ingresarNumero(contador + (cartList[index].cantidad += libro.cantidad));
             return -1;
         }
-
         setCartList([
             ...cartList,
-            id
+            libro
         ])
+        ingresarNumero(contador + libro.cantidad);
     };
 
-    const addToCart = (objProducto) =>{
+    const addToCart = (libro) =>{
         if(cartList.length === 0){
             setCartList([
                 ...cartList,
-                objProducto
+                libro
             ]);
+            ingresarNumero(libro.cantidad);
         }else{
-            isInCart(objProducto);
+            isInCart(libro);
         }
     };
 
@@ -69,7 +64,7 @@ const CartContextProvider = ( {children} ) => {
             vaciarCarrito,
             addToCart,
             precioTotal,
-            contadorCarrito,
+            contador,
             removeItem
         }}>
             {children} 

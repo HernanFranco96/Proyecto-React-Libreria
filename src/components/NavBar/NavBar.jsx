@@ -3,7 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { useCartContext } from '../../context/CartContext';
 
 const NavBar = () => {
-    const { cartList, contadorCarrito } = useCartContext();
+    const { cartList, contador } = useCartContext();
+
     return <>
         <nav className='nav navbar navbar-expand-lg bg-color'>
             <div className="container-fluid d-flex flex-column align-items-center">
@@ -17,7 +18,7 @@ const NavBar = () => {
                     </div>
                     <div className="col">
                         <div className={(cartList.length !== 0) ? 'logo-carrito navbar-brand' : 'carritoVacio'}>
-                            <p>{contadorCarrito()}</p>
+                            <p>{contador}</p>
                             <Link to={'/cart'}>
                                 <CartWidget/>
                             </Link>
