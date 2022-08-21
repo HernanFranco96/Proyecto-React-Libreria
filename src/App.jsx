@@ -26,6 +26,4 @@ function App() {
   )
 }
 
-// Minuto 58
-
 export default App;

@@ -6,12 +6,12 @@ function InputCount() {
     <>
         <div className='input-count'>
             <Link to='/cart'>
-                <button className='btn btn-outline-primary' onClick={() => {console.log('Ir a cart')}}>
+                <button className='btn btn-outline-primary'>
                     Terminar mi compra
                 </button>
             </Link>
             <Link to='/'>
-                <button className='btn btn-outline-primary' onClick={() => {console.log('Ir a home')}}>
+                <button className='btn btn-outline-primary'>
                     Seguir comprando
                 </button>
             </Link>
